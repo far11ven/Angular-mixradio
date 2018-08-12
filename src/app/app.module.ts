@@ -1,0 +1,40 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule} from '@angular/router';
+
+import { AppComponent } from './app.component';
+import { MainComponentComponent } from './components/main-component/main-component.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { LibraryComponent } from './components/main-component/library/library.component';
+import { LibraryItemComponent } from './components/main-component/library/library-item/library-item.component';
+import { AboutComponent } from './components/main-component/about/about.component';
+import { HomeComponent } from './components/main-component/home/home.component';
+import { RadioComponent } from './components/main-component/radio/radio.component';
+
+
+const appRoutes : Routes =[
+  {path: '', component: HomeComponent},
+  {path: 'library', component: LibraryComponent},
+  {path: 'radio', component: RadioComponent},
+  {path: 'about', component: AboutComponent}
+];
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+    MainComponentComponent,
+    HomeComponent,
+    LibraryComponent,
+    LibraryItemComponent,
+    AboutComponent,
+    RadioComponent
+  ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
