@@ -10,6 +10,7 @@ import { LibraryItemComponent } from './components/main-component/library/librar
 import { AboutComponent } from './components/main-component/about/about.component';
 import { HomeComponent } from './components/main-component/home/home.component';
 import { RadioComponent } from './components/main-component/radio/radio.component';
+import { CarouselComponent } from './components/main-component/home/carousel/carousel.component';
 
 
 const appRoutes : Routes =[
@@ -28,7 +29,8 @@ const appRoutes : Routes =[
     LibraryComponent,
     LibraryItemComponent,
     AboutComponent,
-    RadioComponent
+    RadioComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
