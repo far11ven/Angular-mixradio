@@ -77,13 +77,14 @@
                 }]
             });
 
-            $('#sidebar ul li').click(function () {
+            $('#sidebar ul li, .top-nav li').click(function () {
                 $(this).siblings('li').removeClass('active');
                 $(this).siblings('li').children('ul').removeClass('show');
                 $(this).siblings('li').children('ul').children('li').removeClass('active');
                 $(this).addClass('active');
 
             });
+            
 
         });
     </script>
