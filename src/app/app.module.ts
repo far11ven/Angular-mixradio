@@ -10,6 +10,8 @@ import { LibraryItemComponent } from './components/main-component/library/librar
 import { AboutComponent } from './components/main-component/about/about.component';
 import { HomeComponent } from './components/main-component/home/home.component';
 import { RadioComponent } from './components/main-component/radio/radio.component';
+import { PagesComponent } from './components/main-component/pages/pages.component';
+import { PageComponent } from './components/main-component/pages/page/page.component';
 import { CarouselComponent } from './components/main-component/home/carousel/carousel.component';
 
 
@@ -17,7 +19,11 @@ const appRoutes : Routes =[
   {path: '', component: HomeComponent},
   {path: 'library', component: LibraryComponent},
   {path: 'radio', component: RadioComponent},
-  {path: 'about', component: AboutComponent}
+  {path: 'about', component: AboutComponent},
+  {path: 'pages', component: PagesComponent, children:  [ 
+    {path: ':id', component: PageComponent}
+  ]
+  }
 ];
 
 @NgModule({
@@ -30,7 +36,9 @@ const appRoutes : Routes =[
     LibraryItemComponent,
     AboutComponent,
     RadioComponent,
-    CarouselComponent
+    CarouselComponent,
+    PagesComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,

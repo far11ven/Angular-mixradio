@@ -50,7 +50,7 @@
                 next.children(':first-child').clone().appendTo($(this));
             }
         });
-        
+
         $(document).ready(function () {
 
             $("#sidebar").mCustomScrollbar({
@@ -63,11 +63,35 @@
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
 
-            $('#sidebar ul li, .top-nav li').click(function () {
+        //Jquery to toggle active links between sidebar & top-navbar
+            $('#sidebar ul li').click(function () {
+
+                var linkText = $(this).text();
+                console.log("linkText - " + linkText);
+
                 $(this).siblings('li').removeClass('active');
                 $(this).siblings('li').children('ul').removeClass('show');
+                $(this).siblings('li').children('a[aria-expanded=true]').attr('aria-expanded', 'false');
                 $(this).siblings('li').children('ul').children('li').removeClass('active');
                 $(this).addClass('active');
+
+                var tk = '.top-nav li:contains(' + linkText + ')';
+                $(tk).addClass('active');
+                $(tk).siblings('li').removeClass('active');
+
+            });
+
+            $('.top-nav li').click(function () {
+
+                var linkText = $(this).text();
+                console.log("linkText - " + linkText);
+                $('#sidebar ul li').siblings('li').removeClass('active');
+                $('#sidebar ul li').siblings('li').children('ul').removeClass('show');
+                $('#sidebar ul li').siblings('li').children('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                $('#sidebar ul li').siblings('li').children('ul').children('li').removeClass('active');
+                
+                var tk = '#sidebar ul li:contains(' + linkText + ')';
+                $(tk).addClass('active');
 
             });
 
