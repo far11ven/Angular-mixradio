@@ -2,16 +2,17 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-app.use(express.static('/build'));
+app.use(express.static(__dirname + '/dist'));
 app.listen(process.env.PORT || 8080);
 
 //PATH LOCATION STARTEGY
 
-app.get('*', function (req, res) {
-  const index = path.join('index.html');
-  console.log('FETCHING FROM : ' + index);
+app.get('/*', function(req,res){
+  const fullPath = path.join(__dirname + '/dist/index.html');
+  console.log(" Fetching from.." + fullPath);
+	res.sendFile(fullPath);
+})
 
-  res.sendFile("."+index);
-});
+console.log("Server started running..');
 
-console.log('Server started running..');
+//Changed to run on Heroku
