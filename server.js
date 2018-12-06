@@ -13,6 +13,6 @@ app.get('/*', function(req,res){
 	res.sendFile(fullPath);
 })
 
-console.log("Server started running..');
+console.log('Server started running..');
 
 //Changed to run on Heroku
