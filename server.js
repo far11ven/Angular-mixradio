@@ -11,7 +11,7 @@ app.get('*', function (req, res) {
   const index = path.join('index.html');
   console.log('FETCHING FROM : ' + index);
 
-  res.sendFile(index);
+  res.sendFile("."+index);
 });
 
 console.log('Server started running..');
