@@ -9,6 +9,8 @@ app.listen(process.env.PORT || 8080);
 
 app.get('*', function (req, res) {
   const index = path.join(__dirname, 'build', 'index.html');
+  console.log('FETCHING FROM : ' + index);
+
   res.sendFile(index);
 });
 
