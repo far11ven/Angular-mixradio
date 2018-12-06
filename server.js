@@ -2,13 +2,13 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-app.use(express.static(__dirname + '/build'));
+app.use(express.static('/build'));
 app.listen(process.env.PORT || 8080);
 
 //PATH LOCATION STARTEGY
 
 app.get('*', function (req, res) {
-  const index = path.join(__dirname, 'build', 'index.html');
+  const index = path.join('index.html');
   console.log('FETCHING FROM : ' + index);
 
   res.sendFile(index);
